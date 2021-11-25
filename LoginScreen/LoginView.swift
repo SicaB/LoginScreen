@@ -14,24 +14,33 @@ struct LoginView: View {
     //@ObservedObject var keyboard = KeyboardResponder()
     @State private var keyboardHeight: CGFloat = 0
    // @State private var keyboardDuration: TimeInterval = 0
-    @State private var opacitySettings: Double = 0.4
+    @State private var opacitySettings: Double = 0.5
     @State private var keyboardOpened: Bool = false
     
     
     var body: some View {
-        GeometryReader { geometry in
+        //GeometryReader { geometry in
             ZStack(){
-                Image("primaryCircle")
-                    .resizable()
-                    .padding(.bottom, 50)
-                    .scaledToFill()
+                GeometryReader {
+                    geometry in
+                    Image("primaryCircle")
+                        .resizable()
+                        .padding(.bottom, 50)
+                        .scaledToFill()
+                }
+                
 
                 VStack() {
-                    Image("logo")
+                    
+               
+                        Image("logo")
+                    
+                    
+                        
 
                         VStack(spacing: 22){
                     Spacer()
-                        .frame(height: 120)
+                        //.frame(height: 120)
                         
                             TextField("", text: $viewModel.email, onEditingChanged: { (editingChanged) in
                                 self.viewModel.editing = editingChanged
@@ -77,26 +86,25 @@ struct LoginView: View {
                         // If keyboard is not showing, show FaceID and 'glemt login'
                         if (self.keyboardHeight == 0.0){
                         FaceIdAndForgotPasswordView()
-                        Spacer()
+                            Spacer()
                         }
-                                //.ignoresSafeArea(.keyboard)
-                               //.keyboardAdaptive()
-                                //.KeyboardAwarePadding()
-                        }
-                    Spacer()
-                    
-                    // Sets the opacity of the button depending on the textfields being empty or not
-                    if (viewModel.password.isEmpty || viewModel.email.isEmpty) {
-                        ButtonView()
-                            .offset(y: -self.keyboardHeight)
-                            .opacity(0.4)
-
-                    } else {
-                        ButtonView()
-                            .offset(y: -self.keyboardHeight)
-                            .opacity(1)
                             
-                    }
+                            // Sets the opacity of the button depending on the textfields being empty or not
+                            if (viewModel.password.isEmpty || viewModel.email.isEmpty) {
+                                ButtonView()
+                                    //.offset(y: -self.keyboardHeight)
+                                    .opacity(0.4)
+
+                            } else {
+                                ButtonView()
+                                    //.offset(y: -self.keyboardHeight)
+                                    .opacity(1)
+                                    
+                            }
+                        }
+                    
+                    
+                   
                         //.keyboardAdaptive()
                         //.padding(.bottom, keyboard.currentHeight)
                     }
@@ -140,14 +148,15 @@ struct LoginView: View {
                 
             }
             .onDisappear {
-                AppDelegate.orientationLock = .all // Unlocking the rotation when leaving the view
+                // Unlocking the rotation when leaving the view
+                AppDelegate.orientationLock = .all
                 }
             .background(Image("bg")
                             .resizable()
                             .scaledToFill()
                             .edgesIgnoringSafeArea(.all)
             )
-        }
+      //  }
     }
 }
 
