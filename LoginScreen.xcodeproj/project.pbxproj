@@ -8,12 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		86311158273165FC00052B1C /* LoginScreenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86311157273165FC00052B1C /* LoginScreenApp.swift */; };
-		8631115A273165FC00052B1C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86311159273165FC00052B1C /* ContentView.swift */; };
+		8631115A273165FC00052B1C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86311159273165FC00052B1C /* LoginView.swift */; };
 		8631115C273165FD00052B1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8631115B273165FD00052B1C /* Assets.xcassets */; };
 		8631115F273165FD00052B1C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8631115E273165FD00052B1C /* Preview Assets.xcassets */; };
 		86311169273165FD00052B1C /* LoginScreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86311168273165FD00052B1C /* LoginScreenTests.swift */; };
 		86311173273165FD00052B1C /* LoginScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86311172273165FD00052B1C /* LoginScreenUITests.swift */; };
 		86311175273165FD00052B1C /* LoginScreenUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86311174273165FD00052B1C /* LoginScreenUITestsLaunchTests.swift */; };
+		86738328273D42B200CFBD10 /* KeyboardAdaptive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86738327273D42B200CFBD10 /* KeyboardAdaptive.swift */; };
+		8673832A273D4D3700CFBD10 /* Publishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86738329273D4D3700CFBD10 /* Publishers.swift */; };
+		8673832C273D4D6F00CFBD10 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673832B273D4D6F00CFBD10 /* UIResponder.swift */; };
+		8673832E273D50CB00CFBD10 /* KeyboardResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673832D273D50CB00CFBD10 /* KeyboardResponder.swift */; };
+		86738330273D59EB00CFBD10 /* KeyboardAwareModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8673832F273D59EB00CFBD10 /* KeyboardAwareModifier.swift */; };
+		86FB19DF27317EA6008E5AAA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB19DE27317EA6008E5AAA /* LoginViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +42,7 @@
 /* Begin PBXFileReference section */
 		86311154273165FC00052B1C /* LoginScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86311157273165FC00052B1C /* LoginScreenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenApp.swift; sourceTree = "<group>"; };
-		86311159273165FC00052B1C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		86311159273165FC00052B1C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8631115B273165FD00052B1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8631115E273165FD00052B1C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		86311164273165FD00052B1C /* LoginScreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginScreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +50,12 @@
 		8631116E273165FD00052B1C /* LoginScreenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoginScreenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86311172273165FD00052B1C /* LoginScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenUITests.swift; sourceTree = "<group>"; };
 		86311174273165FD00052B1C /* LoginScreenUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86738327273D42B200CFBD10 /* KeyboardAdaptive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAdaptive.swift; sourceTree = "<group>"; };
+		86738329273D4D3700CFBD10 /* Publishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.swift; sourceTree = "<group>"; };
+		8673832B273D4D6F00CFBD10 /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
+		8673832D273D50CB00CFBD10 /* KeyboardResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardResponder.swift; sourceTree = "<group>"; };
+		8673832F273D59EB00CFBD10 /* KeyboardAwareModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardAwareModifier.swift; sourceTree = "<group>"; };
+		86FB19DE27317EA6008E5AAA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,9 +107,15 @@
 			isa = PBXGroup;
 			children = (
 				86311157273165FC00052B1C /* LoginScreenApp.swift */,
-				86311159273165FC00052B1C /* ContentView.swift */,
+				86311159273165FC00052B1C /* LoginView.swift */,
+				86FB19DE27317EA6008E5AAA /* LoginViewModel.swift */,
+				86738327273D42B200CFBD10 /* KeyboardAdaptive.swift */,
+				86738329273D4D3700CFBD10 /* Publishers.swift */,
+				8673832B273D4D6F00CFBD10 /* UIResponder.swift */,
+				8673832F273D59EB00CFBD10 /* KeyboardAwareModifier.swift */,
 				8631115B273165FD00052B1C /* Assets.xcassets */,
 				8631115D273165FD00052B1C /* Preview Content */,
+				8673832D273D50CB00CFBD10 /* KeyboardResponder.swift */,
 			);
 			path = LoginScreen;
 			sourceTree = "<group>";
@@ -257,8 +275,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8631115A273165FC00052B1C /* ContentView.swift in Sources */,
+				8631115A273165FC00052B1C /* LoginView.swift in Sources */,
+				86738328273D42B200CFBD10 /* KeyboardAdaptive.swift in Sources */,
+				8673832E273D50CB00CFBD10 /* KeyboardResponder.swift in Sources */,
 				86311158273165FC00052B1C /* LoginScreenApp.swift in Sources */,
+				8673832A273D4D3700CFBD10 /* Publishers.swift in Sources */,
+				8673832C273D4D6F00CFBD10 /* UIResponder.swift in Sources */,
+				86738330273D59EB00CFBD10 /* KeyboardAwareModifier.swift in Sources */,
+				86FB19DF27317EA6008E5AAA /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -401,7 +425,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
