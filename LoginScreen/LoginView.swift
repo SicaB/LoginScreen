@@ -11,15 +11,10 @@ import Combine
 struct LoginView: View {
     
     @StateObject var viewModel = LoginViewModel()
-    //@ObservedObject var keyboard = KeyboardResponder()
-    @State private var keyboardHeight: CGFloat = 0
-   // @State private var keyboardDuration: TimeInterval = 0
     @State private var opacitySettings: Double = 0.5
     @State private var keyboardOpened: Bool = false
     
-    
     var body: some View {
-        //GeometryReader { geometry in
             ZStack(){
                 GeometryReader {
                     geometry in
@@ -28,23 +23,11 @@ struct LoginView: View {
                         .padding(.bottom, 50)
                         .scaledToFill()
                 }
-                
-
                 VStack() {
-                    
-               
                         Image("logo")
-                    
-                    
-                        
-
-                        VStack(spacing: 22){
+                    VStack(spacing: 22){
                     Spacer()
-                        //.frame(height: 120)
-                        
-                            TextField("", text: $viewModel.email, onEditingChanged: { (editingChanged) in
-                                self.viewModel.editing = editingChanged
-                            })
+                            TextField("", text: $viewModel.email)
                                 .placeholder(when: viewModel.email.isEmpty) {
                                     Text(viewModel.emailPlaceholder).foregroundColor(Color("lightGrayBlue"))
                                         .font(.system(size: 16, weight: .light, design: .default))
@@ -59,14 +42,9 @@ struct LoginView: View {
                                 )
                                 .padding(.horizontal, 30)
                                 .foregroundColor(Color(.gray))
-//                                .modifier(TextFieldClearButton(text: $viewModel.email))
-//                                .multilineTextAlignment(.leading)
                                 .keyboardType(.emailAddress)
                             
                             SecureField("", text: $viewModel.password)
-                                .onTapGesture {
-                                    //self.viewModel.editing = true
-                                }
                                 .placeholder(when: viewModel.password.isEmpty) {
                                     Text(viewModel.passwordPlaceholder)
                                         .foregroundColor(Color("lightGrayBlue"))
@@ -84,10 +62,10 @@ struct LoginView: View {
                                 .foregroundColor(Color(.gray))
                         
                         // If keyboard is not showing, show FaceID and 'glemt login'
-                        if (self.keyboardHeight == 0.0){
-                        FaceIdAndForgotPasswordView()
-                            Spacer()
+                        if (!self.keyboardOpened){
+                            FaceIdAndForgotPasswordView()
                         }
+                        Spacer()
                             
                             // Sets the opacity of the button depending on the textfields being empty or not
                             if (viewModel.password.isEmpty || viewModel.email.isEmpty) {
@@ -99,51 +77,24 @@ struct LoginView: View {
                                 ButtonView()
                                     //.offset(y: -self.keyboardHeight)
                                     .opacity(1)
-                                    
                             }
                         }
-                    
-                    
-                   
-                        //.keyboardAdaptive()
-                        //.padding(.bottom, keyboard.currentHeight)
                     }
-                
             }
-            
-            //.frame(width: geometry.size.width)
-            .onTapGesture {
-                self.viewModel.editing = false
-                self.keyboardOpened = false
-            }
-//            .onReceive(Publishers.keyboardHeight) {
-//                                self.keyboardHeight = $0
-//                print(keyboardHeight)
-//                            }
             .onAppear {
                 // Forcing the rotation to portrait
                 UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
                 // And making sure it stays that way
                 AppDelegate.orientationLock = .portrait
                 
-                NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidShowNotification, object: nil, queue: .main) { (noti) in
+                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillShowNotification, object: nil, queue: .main) { (noti) in
                     self.keyboardOpened = true
                     print(keyboardOpened)
                 }
-                
+
                 NotificationCenter.default.addObserver(forName: UIResponder.keyboardDidHideNotification, object: nil, queue: .main) { (noti) in
                     self.keyboardOpened = false
                     print(keyboardOpened)
-                }
-                
-                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillChangeFrameNotification, object: nil, queue: .main) { (noti) in
-                    let value = noti.userInfo![UIResponder.keyboardFrameBeginUserInfoKey] as! CGRect
-                    keyboardHeight = value.height-30
-                    
-                }
-
-                NotificationCenter.default.addObserver(forName: UIResponder.keyboardWillHideNotification, object: nil, queue: .main) { (noti) in
-                    self.keyboardHeight = 0
                 }
                 
             }
